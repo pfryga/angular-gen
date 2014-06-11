@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name angularGenApp.controller:AboutCtrl
+ * @name angularGenApp.controller:LoginCtrl
  * @description
- * # AboutCtrl
+ * # LoginCtrl
  * Controller of the angularGenApp
  */
 angular.module('angularGenApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
