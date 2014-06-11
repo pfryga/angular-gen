@@ -133,3 +133,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.table tbody>tr>td.vert-align {
+    vertical-align: middle;
+}
