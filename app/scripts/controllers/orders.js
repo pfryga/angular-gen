@@ -14,4 +14,21 @@ angular.module('angularGenApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.orders = [
+    	{
+			title: "Bottle",
+			user: "Bill Gates",
+			price: 199
+		},
+		{
+			title: "Eggs",
+			user: "Bill Gates",
+			price: 79
+		},
+		{
+			title: "Milk",
+			user: "Bill Gates",
+			price: 150
+		},
+    ];
   });
