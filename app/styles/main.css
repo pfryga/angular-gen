@@ -23,35 +23,45 @@ body {
  */
 
 /* Hide for mobile, show later */
-.sidebar {
-  display: none;
+.main {
+  left: 0;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.sidebar {
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+  bottom: 0;
+  display: block;
+  left: -200px;
+  position: fixed;
+  padding: 20px;
+  top: 51px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1000;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.sidebar.show {
+  left: 0px;
+}
+.sidebar.show + .main {
+  left: 200px;
+}
 /* Mobile */
 @media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
   .container-overflow {
     overflow: hidden;
-  }
-  .sidebar.show {
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-    bottom: 0;
-    display: block;
-    left: 0;
-    position: fixed;
-    padding: 20px;
-    top: 51px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 200px;
-    z-index: 1000;
-  }
-  .sidebar.show + .main {
-    left: 200px;
   }
 }
 /* end of Mobile */
@@ -59,17 +69,7 @@ body {
 /* Desktop */
 @media (min-width: 768px) {
   .sidebar {
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-    bottom: 0;
-    display: block;
     left: 0;
-    position: fixed;
-    padding: 20px;
-    top: 51px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    z-index: 1000;
   }
 }
 /* end of Desktop */
