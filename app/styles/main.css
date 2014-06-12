@@ -52,13 +52,13 @@ body {
 .sidebar.show {
   left: 0px;
 }
-.sidebar.show + .main {
-  left: 200px;
-}
 /* Mobile */
 @media (max-width: 768px) {
   .sidebar {
     width: 200px;
+  }
+  .sidebar.show + .main {
+    left: 200px;
   }
   .container-overflow {
     overflow: hidden;
