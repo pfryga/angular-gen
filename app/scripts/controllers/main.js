@@ -14,4 +14,8 @@ angular.module('angularGenApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.showMobileMenu = false;
+    $scope.toggleMobileMenu = function () {
+    	$scope.showMobileMenu = $scope.showMobileMenu === false ? true : false;
+    };
   });
