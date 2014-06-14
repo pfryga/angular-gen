@@ -47,6 +47,10 @@ angular
         templateUrl: 'views/users.html',
         controller: 'UsersCtrl'
       })
+      .when('/restapi', {
+        templateUrl: 'views/restapi.html',
+        controller: 'RestapiCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

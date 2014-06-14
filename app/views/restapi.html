@@ -1,0 +1,25 @@
+<div ng-controller="RestapiCtrl">
+	<ol class="breadcrumb">
+		<li><a href="#">Home</a></li>
+		<li class="active">RestAPI</li>
+	</ol>
+	<h2 class="sub-header">RestAPI</h2>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>ID</th>
+					<th class="text-right">Created</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in apiResponse">
+					<td class="vert-align">{{ $index + 1 }}</td>
+					<td class="vert-align">{{ item.id }}</td>
+					<td class="text-right">{{ item.created_at | date }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
