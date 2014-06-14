@@ -8,7 +8,12 @@
  * Controller of the angularGenApp
  */
 angular.module('angularGenApp')
-  .controller('ReportsCtrl', function ($scope, User) {
+  .controller('ReportsCtrl', function ($scope, $http, User) {
+
+    $http.get('http://rest-service.guides.spring.io/greeting').
+        success(function(data) {
+            $scope.greeting = data;
+        });
 
   	User.setUsername('piotr.fryga');
   	User.setExampleField(2);
