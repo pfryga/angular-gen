@@ -3,7 +3,7 @@
   <li class="active">Reports</li>
 </ol>
 <h2 class="sub-header">Reports</h2>
-<div class="table-responsive">
+<div class="table-responsive" ng-controller="ReportsCtrl">
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -38,4 +38,9 @@
 			</tr>
 		</tbody>
 	</table>
+	<div>
+		{{ getHelloMessage() }}
+		{{ displayExampleField() }}
+		<list></list>
+	</div>
 </div>

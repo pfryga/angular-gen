@@ -5,20 +5,36 @@
 	</ol>
 	
 	<div class="table-responsive">
+		<div>
+			<div class="form-group">
+				<select class="form-control" ng-model="orderProp">
+					<option value="title">Title</option>
+					<option value="user">User</option>
+					<option value="price">Price</option>
+					<option value="date">Date</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Filter by name" ng-model="filterQuery.user">
+			</div>
+		</div>
+		<div>{{ orderProp }}</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>#</th>
 					<th>Title</th>
 					<th>User</th>
+					<th>Date</th>
 					<th class="text-right">Price</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="order in orders">
+				<tr ng-repeat="order in orders | orderBy:orderProp | filter:filterQuery">
 					<td class="vert-align">{{ $index + 1 }}.</td>
 					<td class="vert-align">{{ order.title }}</td>
 					<td class="vert-align">{{ order.user }}</td>
+					<td class="vert-align">{{ order.date | date: 'dd.MM.yyyy, HH:mm:ss' }}</td>
 					<td class="cert-align text-right">
 						{{ order.price | currency }}
 					</td>
