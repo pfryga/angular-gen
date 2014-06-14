@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl'
       })
+      .when('/products/:productId', {
+        templateUrl: 'views/productdetail.html',
+        controller: 'ProductdetailCtrl'
+      })
       .when('/orders', {
         templateUrl: 'views/orders.html',
         controller: 'OrdersCtrl'

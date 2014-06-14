@@ -2,20 +2,17 @@
 
 /**
  * @ngdoc function
- * @name angularGenApp.controller:UsersCtrl
+ * @name angularGenApp.controller:ProductdetailCtrl
  * @description
- * # UsersCtrl
+ * # ProductdetailCtrl
  * Controller of the angularGenApp
  */
 angular.module('angularGenApp')
-  .controller('UsersCtrl', function ($scope, $http) {
+  .controller('ProductdetailCtrl', function ($scope, $routeParams) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    $http.get('resources/users.json').success(function(data) {
-  		$scope.users = data;
-  	});
-
+    $scope.productId = $routeParams.productId;
   });
