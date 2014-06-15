@@ -4,20 +4,29 @@
 		<li class="active">RestAPI</li>
 	</ol>
 	<h2 class="sub-header">RestAPI</h2>
-	<div class="table-responsive">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Search images by tags..." ng-model="queryTags">
+	</div>
+	<button class="btn btn-primary" ng-click="getImages(queryTags)">Search</button>
+	<div class="table-responsive" ng-show="apiResponse.items">
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>ID</th>
-					<th class="text-right">Created</th>
+					<th>User ID</th>
+					<th>Created</th>
+					<th class="text-right">Thumb</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in apiResponse">
-					<td class="vert-align">{{ $index + 1 }}</td>
-					<td class="vert-align">{{ item.id }}</td>
-					<td class="text-right">{{ item.created_at | date }}</td>
+				<!-- <tr>{{ apiResponse }}</tr> -->
+				<tr ng-repeat="item in apiResponse.items">
+					<td class="vert-align">{{ $index + 1 }}.</td>
+					<td class="vert-align">{{ item.author_id }}</td>
+					<td class="vert-align">{{ item.published | date: 'MM/dd/yyyy, HH:mm' }}</td>
+					<td class="text-right">
+						<img class="img-thumbnail" src="{{ item.media.m }}" alt="">
+					</td>
 				</tr>
 			</tbody>
 		</table>

@@ -8,6 +8,16 @@
  * Factory in the angularGenApp.
  */
 angular.module('angularGenApp')
-  .factory('item', function ($resource) {
-    return $resource('https://api.github.com/repos/angular/angular.js/issues');
-  });
+	.factory('item', function ($resource) {
+		return $resource(
+			'http://api.flickr.com/services/feeds/photos_public.gne',
+			{
+				format: 'json',
+				jsoncallback: 'JSON_CALLBACK'
+			},
+			{ 
+				'load': {
+					'method': 'JSONP'
+				}
+			});
+		});
