@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/restapi.html',
         controller: 'RestapiCtrl'
       })
+      .when('/twitterapi', {
+        templateUrl: 'views/twitterapi.html',
+        controller: 'TwitterapiCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

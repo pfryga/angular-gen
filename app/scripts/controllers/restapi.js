@@ -14,7 +14,7 @@ angular.module('angularGenApp')
       'AngularJS',
       'Karma'
     ];
-    
+
     // item.query(function(data) {
     // 	$scope.apiResponse = data;
     // });
@@ -23,6 +23,9 @@ angular.module('angularGenApp')
   		$scope.apiResponse = item.load({
 	  		tags: tags
 	  	});
+  	};
+  	$scope.clearImages = function () {
+  		$scope.apiResponse = '';
   	};
 
     // $scope.rValue = item.someMethod(100);

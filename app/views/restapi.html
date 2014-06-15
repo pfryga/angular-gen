@@ -8,6 +8,7 @@
 		<input type="text" class="form-control" placeholder="Search images by tags..." ng-model="queryTags">
 	</div>
 	<button class="btn btn-primary" ng-click="getImages(queryTags)">Search</button>
+	<button class="btn btn-warning" ng-click="clearImages()">Clear</button>
 	<div class="table-responsive" ng-show="apiResponse.items">
 		<table class="table table-striped">
 			<thead>
@@ -19,7 +20,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<!-- <tr>{{ apiResponse }}</tr> -->
 				<tr ng-repeat="item in apiResponse.items">
 					<td class="vert-align">{{ $index + 1 }}.</td>
 					<td class="vert-align">{{ item.author_id }}</td>
