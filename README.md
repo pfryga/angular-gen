@@ -24,4 +24,4 @@ Bower resources
 
 or
 
-	grunt built
+	grunt build
