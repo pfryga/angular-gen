@@ -55,6 +55,10 @@ angular
         templateUrl: 'views/twitterapi.html',
         controller: 'TwitterapiCtrl'
       })
+      .when('/googleMapsApi', {
+        templateUrl: 'views/googlemapsapi.html',
+        controller: 'GooglemapsapiCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
