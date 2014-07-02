@@ -59,6 +59,10 @@ angular
         templateUrl: 'views/googlemapsapi.html',
         controller: 'GooglemapsapiCtrl'
       })
+      .when('/restapihttp', {
+        templateUrl: 'views/restapihttp.html',
+        controller: 'RestapihttpCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
