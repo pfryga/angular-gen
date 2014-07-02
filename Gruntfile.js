@@ -44,6 +44,13 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
+      less: {
+        files: ['<%= less.options.paths %>'],
+        tasks: ['less:dynamic_mappings_development'],
+        options: {
+          spawn: true
+        }
+      },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
@@ -60,6 +67,24 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+
+    less: {
+      options: {
+        paths: [
+          'app/styles/source/*.less',
+          'app/styles/*.less'
+        ]
+      },
+      dynamic_mappings_development: {
+        options: {
+          yuicompress: false,
+          ieCompat: true
+        },
+        files: {
+          "app/styles/main.css": "app/styles/main.less"
+        }
       }
     },
 
