@@ -14,10 +14,10 @@ angular.module('angularGenApp')
         return $http({
           method: 'jsonp',
             url: 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK&tags=' + ob.tags
-        }).success(function(data, status) {
-          return data;
-        }).error(function (data, status) {
-
+        }).success(function(response) {
+          return response;
+        }).error(function (response) {
+          return response;
         });
       }
     }
